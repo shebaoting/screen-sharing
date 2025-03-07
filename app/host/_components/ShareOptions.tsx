@@ -38,7 +38,7 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
                         复制代码
                     </Button>
                 </div>
-                <code className="block w-full p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-mono">{roomId || "Generating room code..."}</code>
+                <code className="block w-full p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-mono">{roomId || "正在生成房间代码…"}</code>
             </div>
 
             <div className="relative">
@@ -58,7 +58,7 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
                         复制链接
                     </Button>
                 </div>
-                <code className="block w-full p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-mono truncate">{roomId ? `${window.location.origin}/join?room=${roomId}` : "Generating link..."}</code>
+                <code className="block w-full p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-mono truncate">{roomId ? `${window.location.origin}/join?room=${roomId}` : "正在生成链接…"}</code>
             </div>
         </div>
     );
