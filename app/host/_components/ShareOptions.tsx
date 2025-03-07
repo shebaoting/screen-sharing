@@ -14,8 +14,8 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
     function copyRoomId() {
         navigator.clipboard.writeText(roomId);
         toast({
-            title: "Room code copied!",
-            description: "Share this code with others to let them join your room."
+            title: "房间密码复制！",
+            description: "与他人分享此代码，让他们加入您的房间。"
         });
     }
 
@@ -23,8 +23,8 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
         const shareableUrl = `${window.location.origin}/join?room=${roomId}`;
         navigator.clipboard.writeText(shareableUrl);
         toast({
-            title: "Shareable link copied!",
-            description: "Share this link with others to let them join your room directly."
+            title: "共享链接复制！",
+            description: "与其他人分享此链接，让他们直接加入您的房间。"
         });
     }
 
