@@ -32,10 +32,10 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
         <div className="space-y-6">
             <div className="space-y-2">
                 <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>Room Code</span>
+                    <span>房间代码</span>
                     <Button variant="ghost" size="sm" className="gap-2" onClick={copyRoomId} disabled={!roomId}>
                         <Copy className="h-4 w-4" />
-                        Copy Code
+                        复制代码
                     </Button>
                 </div>
                 <code className="block w-full p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-mono">{roomId || "Generating room code..."}</code>
@@ -52,10 +52,10 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
 
             <div className="space-y-2">
                 <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>Shareable Link</span>
+                    <span>可分享链接</span>
                     <Button variant="ghost" size="sm" className="gap-2" onClick={copyShareableLink} disabled={!roomId}>
                         <LinkIcon className="h-4 w-4" />
-                        Copy Link
+                        复制链接
                     </Button>
                 </div>
                 <code className="block w-full p-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-mono truncate">{roomId ? `${window.location.origin}/join?room=${roomId}` : "Generating link..."}</code>

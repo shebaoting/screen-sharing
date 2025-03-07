@@ -100,7 +100,7 @@ export default function JoinPage() {
                 <Button variant="outline" asChild>
                     <Link href="/" className="flex items-center gap-2">
                         <ArrowLeft className="h-4 w-4" />
-                        Back to Home
+                        返回首页
                     </Link>
                 </Button>
 
@@ -108,9 +108,9 @@ export default function JoinPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Users className="h-6 w-6" />
-                            Join a Room
+                            加入房间
                         </CardTitle>
-                        <CardDescription>Enter the room code to join and view the shared screen</CardDescription>
+                        <CardDescription>输入房间代码加入并查看共享屏幕</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
                         {!activeStream ? (

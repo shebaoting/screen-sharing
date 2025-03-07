@@ -50,12 +50,12 @@ export default function HostPage() {
         if (!activeStream) {
             if (connections.length > 0) {
                 toast({
-                    title: "New viewer connected",
-                    description: "Click to start sharing your screen.",
+                    title: "已连接新查看器",
+                    description: "点击开始共享屏幕。",
                     duration: Infinity,
                     action: (
                         <ToastAction
-                            altText="Start sharing"
+                            altText="开始共享"
                             onClick={async () => {
                                 try {
                                     const stream = await navigator.mediaDevices.getDisplayMedia({
@@ -64,15 +64,15 @@ export default function HostPage() {
                                     });
                                     setActiveStream(stream);
                                 } catch (err) {
-                                    console.error("Screen sharing error:", err);
+                                    console.error("屏幕共享错误:", err);
                                     toast({
-                                        title: "Screen sharing error",
-                                        description: "Failed to start screen sharing. Please try again.",
+                                        title: "屏幕共享错误",
+                                        description: "无法开始屏幕共享。请重试。",
                                         variant: "destructive"
                                     });
                                 }
                             }}>
-                            Start Sharing
+                            开始共享
                         </ToastAction>
                     )
                 });
@@ -117,7 +117,7 @@ export default function HostPage() {
                 <Button variant="outline" asChild>
                     <Link href="/" className="flex items-center gap-2">
                         <ArrowLeft className="h-4 w-4" />
-                        Back to Home
+                        返回首页
                     </Link>
                 </Button>
 
@@ -125,9 +125,9 @@ export default function HostPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Monitor className="h-6 w-6" />
-                            Your Screen Sharing Room
+                            您的屏幕共享房间
                         </CardTitle>
-                        <CardDescription>Share your room code or link with others to let them view your screen. To share audio as well, ensure you're using Chrome or Edge, and select the option to share a tab.</CardDescription>
+                        <CardDescription>分享您的房间代码或链接，以便他人查看您的屏幕。若要共享音频，请确保您正在使用 Chrome 或 Edge，并选择共享标签页的选项。</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
                         <ShareOptions roomId={roomId} />
@@ -135,7 +135,7 @@ export default function HostPage() {
                         <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                             <div className="flex items-center gap-2">
                                 <Users className="h-5 w-5 text-gray-500" />
-                                <span className="text-sm text-gray-500">Current Viewers</span>
+                                <span className="text-sm text-gray-500">当前观众</span>
                             </div>
                             <span className="text-lg font-semibold">{connections.length}</span>
                         </div>
@@ -143,7 +143,7 @@ export default function HostPage() {
                         {activeStream && (
                             <div className="flex justify-end pt-4">
                                 <Button variant="destructive" onClick={endSession} className="flex items-center gap-2">
-                                    Stop sharing
+                                    停止共享
                                 </Button>
                             </div>
                         )}
